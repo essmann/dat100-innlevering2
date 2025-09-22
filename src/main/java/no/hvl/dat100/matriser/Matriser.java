@@ -1,17 +1,21 @@
 package no.hvl.dat100.matriser;
- class HelperMethods{
-     static int[][] deepCopy2DArray(int[][] arrayToCopy) {
-         int rows = arrayToCopy.length;
-         int[][] copy = new int[rows][]; // create new top-level array
 
-         for (int i = 0; i < rows; i++) {
-             copy[i] = arrayToCopy[i].clone(); // clone each inner array
-         }
+//class HelperMethods {
+//    static int[][] deepCopy2DArray(int[][] arrayToCopy) {
+//        int rows = arrayToCopy.length;
+//        int[][] copy = new int[rows][]; // create new top-level array
+//
+//        for (int i = 0; i < rows; i++) {
+//            copy[i] = arrayToCopy[i].clone(); // clone each inner array
+//        }
+//
+//        return copy;
+//    }
+//
+//}
 
-         return copy;
-     }
+import no.hvl.dat100.HelperMethods;
 
- }
 public class Matriser {
 
     // a)
@@ -67,12 +71,13 @@ public class Matriser {
         // TODO
         //{1,2,3} {4,5,6} {7,8,9} -> {1,4,7}, {2,5,8}, {3,6,9}
         int[][] matriseCopy = HelperMethods.deepCopy2DArray(matrise);
-        int i = 0; int j = 0;
+        int i = 0;
+        int j = 0;
         int col = matrise.length;
         int row = matrise[0].length;
-        while(i < row){
+        while (i < row) {
 
-            while(j < col){
+            while (j < col) {
                 matriseCopy[i][j] = matrise[j][i]; //sort of swapping them
                 j++;
             }
@@ -87,6 +92,10 @@ public class Matriser {
     public static int[][] multipliser(int[][] a, int[][] b) {
 
         // TODO
+        // a = {1,2,3} {4,5,6} {7,8,9}
+        //b = {10,11,12} {13,14,15} {16,17,18}
+
+        // a*b =  {84,90,96}, {201,216,231}, {318,342,366}
         throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
 
     }
