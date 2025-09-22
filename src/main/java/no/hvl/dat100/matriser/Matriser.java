@@ -1,19 +1,17 @@
 package no.hvl.dat100.matriser;
  class HelperMethods{
-    static int[][] deepCopy2DArray(int [][] arrayToCopy){
-        int rows = arrayToCopy.length;
-        int cols = arrayToCopy[0].length;
-        int[][] matriseCopy = new int[cols][rows]; // for transpose
+     static int[][] deepCopy2DArray(int[][] arrayToCopy) {
+         int rows = arrayToCopy.length;
+         int[][] copy = new int[rows][]; // create new top-level array
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                matriseCopy[j][i] = arrayToCopy[i][j]; // transpose
-            }
-        }
-        return matriseCopy;
+         for (int i = 0; i < rows; i++) {
+             copy[i] = arrayToCopy[i].clone(); // clone each inner array
+         }
 
-    }
-}
+         return copy;
+     }
+
+ }
 public class Matriser {
 
     // a)
@@ -68,7 +66,7 @@ public class Matriser {
 
         // TODO
         //{1,2,3} {4,5,6} {7,8,9} -> {1,4,7}, {2,5,8}, {3,6,9}
-        int[][] matriseCopy = matrise.clone();
+        int[][] matriseCopy = HelperMethods.deepCopy2DArray(matrise);
         int i = 0; int j = 0;
         int col = matrise.length;
         int row = matrise[0].length;
@@ -79,6 +77,7 @@ public class Matriser {
                 j++;
             }
             i++;
+            j = 0;
         }
         return matriseCopy;
 

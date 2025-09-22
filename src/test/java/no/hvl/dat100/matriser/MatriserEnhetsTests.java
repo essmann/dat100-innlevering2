@@ -88,7 +88,6 @@ class MatriserEnhetsTests {
 			
 		int[][] speile = Matriser.speile(a);
 
-        System.out.println(speile);
 		assertFalse(speile == a);
 		assertArrayEquals(speilet,speile);
 	}
