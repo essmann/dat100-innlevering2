@@ -37,7 +37,7 @@ public class Tabeller {
 
         // TODO
         int sum = 0;
-        for(int num : tabell){
+        for (int num : tabell) {
             sum += num;
         }
         return sum;
@@ -47,8 +47,8 @@ public class Tabeller {
     public static boolean finnesTall(int[] tabell, int tall) {
 
         // TODO
-        for(int num : tabell){
-            if(tall == num){
+        for (int num : tabell) {
+            if (tall == num) {
                 return true;
             }
         }
@@ -60,8 +60,8 @@ public class Tabeller {
 
         // TODO
         int index = 0;
-        for(int num : tabell){
-            if(num == tall){
+        for (int num : tabell) {
+            if (num == tall) {
                 return index;
             }
             index++;
@@ -73,21 +73,49 @@ public class Tabeller {
     public static int[] reverser(int[] tabell) {
 
         // TODO
-        throw new UnsupportedOperationException("Metoden reverser ikke implementert");
+        int length = tabell.length;
+        int[] reversed = new int[length];
+        int i = 0;
+        while (length> 0) {
+            reversed[i] = tabell[length-1];
+            length--;
+            i++;
+
+        }
+        return reversed;
     }
 
     // g)
     public static boolean erSortert(int[] tabell) {
 
         // TODO
-        throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
+        if(tabell.length == 0){
+            return true;
+        }
+        int refNumber = tabell[0];
+        for(int i = 1; i<tabell.length; i++){
+                if(tabell[i] > refNumber){
+                    refNumber = tabell[i];
+                }
+                else{
+                    return false;
+                }
+        }
+        return true;
     }
 
     // h)
     public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
         // TODO
-        throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
+        int[] result = new int[tabell1.length + tabell2.length];
+        for(int i = 0; i<tabell1.length; i++){
+            result[i] = tabell1[i];
+        }
+        for(int j = 0; j<tabell2.length; j++){
+            result[tabell1.length + j] = tabell2[j];
+        }
+        return result;
 
     }
 }
