@@ -2,62 +2,77 @@ package no.hvl.dat100.tabeller;
 
 public class Tabeller {
 
-	// a)
-	public static void skrivUt(int[] tabell) {
+    // a)
+    public static void skrivUt(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+        // TODO
+        String str = " [";
+        for (int num : tabell) {
+            str += num + " ";
+        }
+        str += "]";
+        System.out.println(str);
 
-	}
+    }
 
-	// b)
-	public static String tilStreng(int[] tabell) {
+    // b)
+    public static String tilStreng(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-	}
+        // TODO
+        if (tabell.length == 0) {
+            return "[]";
+        }
+        String numString = "";
+        String resultString = "[@]";
+        for (int num : tabell) {
+            numString += num + ",";
+        }
+        numString = numString.substring(0, numString.length() - 1);
+        resultString = resultString.replace("@", numString);
+        return resultString;
+    }
 
-	// c)
-	public static int summer(int[] tabell) {
+    // c)
+    public static int summer(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden summer ikke implementert");
-	}
+        // TODO
+        throw new UnsupportedOperationException("Metoden summer ikke implementert");
+    }
 
-	// d)
-	public static boolean finnesTall(int[] tabell, int tall) {
+    // d)
+    public static boolean finnesTall(int[] tabell, int tall) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
+        // TODO
+        throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
 
-	}
+    }
 
-	// e)
-	public static int posisjonTall(int[] tabell, int tall) {
+    // e)
+    public static int posisjonTall(int[] tabell, int tall) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden posisjonTall ikke implementert");
-	}
+        // TODO
+        throw new UnsupportedOperationException("Metoden posisjonTall ikke implementert");
+    }
 
-	// f)
-	public static int[] reverser(int[] tabell) {
+    // f)
+    public static int[] reverser(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden reverser ikke implementert");
-	}
+        // TODO
+        throw new UnsupportedOperationException("Metoden reverser ikke implementert");
+    }
 
-	// g)
-	public static boolean erSortert(int[] tabell) {
+    // g)
+    public static boolean erSortert(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
-	}
+        // TODO
+        throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
+    }
 
-	// h)
-	public static int[] settSammen(int[] tabell1, int[] tabell2) {
+    // h)
+    public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
+        // TODO
+        throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
 
-	}
+    }
 }
