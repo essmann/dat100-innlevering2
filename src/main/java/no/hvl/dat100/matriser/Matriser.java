@@ -16,6 +16,9 @@ package no.hvl.dat100.matriser;
 
 import no.hvl.dat100.HelperMethods;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Matriser {
 
     // a)
@@ -44,7 +47,7 @@ public class Matriser {
     public static int[][] skaler(int tall, int[][] matrise) {
 
         // TODO
-        int[][] matriseCopy = matrise.clone();
+        int[][] matriseCopy = HelperMethods.deepCopy2DArray(matrise);
         int row = 0;
         for (int[] array : matriseCopy) {
 
@@ -96,12 +99,38 @@ public class Matriser {
         //b = {10,11,12} {13,14,15} {16,17,18}
 
         // a*b =  {84,90,96}, {201,216,231}, {318,342,366}
-        throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
 
+
+        if (a[0].length != b.length) {
+            throw new IllegalArgumentException("The number of columns in the first matrix must equal the number of rows in the second matrix.");
+        }
+
+        int rowsA = a.length;
+        int colsA = a[0].length;
+        int colsB = b[0].length;
+        int[][] result = new int[rowsA][colsB];
+
+        for (int i = 0; i < rowsA; i++) {
+            int sum = 0;
+            for (int j = 0; j < colsB; j++) {
+
+                for (int k = 0; k < colsA; k++) {
+
+                    int leftNum = a[i][k]; // 1 , 2 , 3
+                    int rightNum = b[k][j];
+                    sum += leftNum * rightNum;
+
+
+                }
+                result[i][j] = sum;
+                sum = 0;
+            }
+        }
+        return result;
     }
 
-
 }
+
 
 // f)
 
