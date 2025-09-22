@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
+import java.util.Arrays;
+
 @Timeout(30)
 class MatriserEnhetsTests {
 
@@ -85,7 +87,8 @@ class MatriserEnhetsTests {
 		int[][] speilet = { {1,4,7}, {2,5,8}, {3,6,9} };
 			
 		int[][] speile = Matriser.speile(a);
-		
+
+        System.out.println(speile);
 		assertFalse(speile == a);
 		assertArrayEquals(speilet,speile);
 	}
