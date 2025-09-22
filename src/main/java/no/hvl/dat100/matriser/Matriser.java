@@ -28,7 +28,16 @@ public class Matriser {
 	public static int[][] skaler(int tall, int[][] matrise) {
 		
 		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
+        int[][] matriseCopy = matrise.clone();
+        int row = 0;
+		for(int[] array : matriseCopy){
+
+            for(int i = 0; i<array.length; i++){
+                    matriseCopy[row][i] = matrise[row][i] * tall;
+            }
+            row++;
+        }
+        return matriseCopy;
 	
 	}
 
